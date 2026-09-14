@@ -12,6 +12,16 @@ Website for the user's website-building services. Built September 14, 2026.
 
 ## Operation
 
+Public preview: https://v3r3v.github.io/websirico/
+
+GitHub repository: https://github.com/v3r3v/websirico
+
+GitHub Pages publishes automatically when changes are pushed to `main`. The workflow installs locked dependencies with `npm ci`, runs `npm run build:pages`, and deploys `dist-pages`. Repository Settings → Pages must use **GitHub Actions** as its source.
+
+The static entry in `pages/` reuses the same page and styles as Sites. `vite.pages.config.ts` sets `/websirico/` as the public base; the profile photo uses that base, and social metadata points to public GitHub Pages assets. Run `npm run preview:pages` after a Pages build to check locally. The original Sites build remains available via `npm run build`.
+
+This is a public informational preview. It requires no ChatGPT account. The inquiry form still prepares an email draft or downloads a brief; it does not send mail from a server. No domain has been purchased or connected. Internal prospect estimates and call notes are outside this repository.
+
 Use npm install, npm run dev and npm run build. The project uses the generated Sites/Vinext structure and retains its lockfile. Hosting identity is in .openai/hosting.json. Never place source credentials or user secrets in this file or source control.
 
 The primary page is app/page.tsx; hero/base styles are app/globals.css; the remaining site styles are app/studio.css. Metadata is in app/layout.tsx. The generated social card is public/og.png.
