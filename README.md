@@ -12,17 +12,17 @@ Website for the user's website-building services. Built September 14, 2026.
 
 ## Operation
 
-For the planned custom-domain launch on Cloudflare, follow [the domain and hosting guide](docs/domain-and-hosting-setup.md). The Cloudflare build uses `/` asset paths and a required `WEBSIRICO_SITE_URL` build variable. GitHub Pages continues to use its existing separate build. Adding these files does not purchase a domain, create a Cloudflare deployment, or change DNS.
+For the planned custom-domain launch on Cloudflare, follow [the domain and hosting guide](docs/domain-and-hosting-setup.md). The Cloudflare build uses `/` asset paths and a required `SITE_URL` build variable. GitHub Pages continues to use its existing separate build. Adding these files does not purchase a domain, create a Cloudflare deployment, or change DNS.
 
-Public preview: https://v3r3v.github.io/websirico/
+Public preview: https://v3r3v.github.io/adelvio/
 
-GitHub repository: https://github.com/v3r3v/websirico
+GitHub repository: https://github.com/v3r3v/adelvio
 
 GitHub Pages publishes automatically when changes are pushed to `main`. The workflow installs locked dependencies with `npm ci`, runs `npm run build:pages`, and deploys `dist-pages`. Repository Settings → Pages must use **GitHub Actions** as its source.
 
 The static entry in `pages/` reuses the same page and styles as Sites. `vite.pages.config.ts` sets `/websirico/` as the public base; the profile photo uses that base, and social metadata points to public GitHub Pages assets. Run `npm run preview:pages` after a Pages build to check locally. The original Sites build remains available via `npm run build`.
 
-This is a public informational preview. It requires no ChatGPT account. The inquiry form still prepares an email draft or downloads a brief; it does not send mail from a server. No domain has been purchased or connected. Internal prospect estimates and call notes are outside this repository.
+This is a public informational preview. It requires no ChatGPT account. The inquiry form still prepares an email draft or downloads a brief; it does not send mail from a server. The owner reports purchasing adelvio.com; its Cloudflare connection remains pending. Internal prospect estimates and call notes are outside this repository.
 
 Use npm install, npm run dev and npm run build. The project uses the generated Sites/Vinext structure and retains its lockfile. Hosting identity is in .openai/hosting.json. Never place source credentials or user secrets in this file or source control.
 
@@ -34,4 +34,4 @@ Production build and TypeScript check passed. Inspected desktop and mobile layou
 
 
 ## Brand and contact update
-Public business name: Websirico. Owner: Jose Rodriguez, B.S. in Computer Engineering (PUPR). Uses the supplied profile photo, phone, email, Instagram and LinkedIn links. The form prepares a mailto draft for the visitor to review and send; it does not deliver mail through a backend. A local brief download remains available. The domain websirico.com has not been purchased or connected.
+Public business name: Websirico. Owner: Jose Rodriguez, B.S. in Computer Engineering (PUPR). Uses the supplied profile photo, phone, email, Instagram and LinkedIn links. The form prepares a mailto draft for the visitor to review and send; it does not deliver mail through a backend. A local brief download remains available. The owner reports purchasing adelvio.com. Cloudflare custom-domain activation remains pending.
