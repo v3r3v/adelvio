@@ -11,7 +11,9 @@
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern dist-pages --ignore-pattern .next",
     "build:pages": "vite build --config vite.pages.config.ts",
-    "preview:pages": "vite preview --config vite.pages.config.ts"
+    "preview:pages": "vite preview --config vite.pages.config.ts",
+    "build:cloudflare": "vite build --config vite.cloudflare.config.ts",
+    "deploy:cloudflare": "wrangler deploy --config wrangler.cloudflare.jsonc"
   },
   "dependencies": {
     "next": "16.2.6",

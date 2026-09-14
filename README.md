@@ -12,6 +12,8 @@ Website for the user's website-building services. Built September 14, 2026.
 
 ## Operation
 
+For the planned custom-domain launch on Cloudflare, follow [the domain and hosting guide](docs/domain-and-hosting-setup.md). The Cloudflare build uses `/` asset paths and a required `WEBSIRICO_SITE_URL` build variable. GitHub Pages continues to use its existing separate build. Adding these files does not purchase a domain, create a Cloudflare deployment, or change DNS.
+
 Public preview: https://v3r3v.github.io/websirico/
 
 GitHub repository: https://github.com/v3r3v/websirico
