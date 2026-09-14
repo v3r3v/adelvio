@@ -1,6 +1,6 @@
-# Websirico — domain purchase and full hosting setup
+# Adelvio — domain purchase and full hosting setup
 
-Prepared September 14, 2026. The owner reports purchasing `adelvio.com` and renaming the GitHub repository to `v3r3v/adelvio`. Cloudflare account connection, deployment and DNS activation still need confirmation. The purchase section below is retained for reference; continue at step 2.
+Prepared September 14, 2026. The owner has purchased `adelvio.com`, renamed the GitHub repository to `v3r3v/adelvio`, and confirmed the Cloudflare website is live. The initial setup instructions below are retained for reference. Production uses the `adelvio` Worker and `SITE_URL=https://adelvio.com`.
 
 The setup uses Cloudflare Registrar for the domain, Cloudflare DNS to connect it, Cloudflare Workers Static Assets for hosting, and GitHub for the source code. The existing design, packages and email-draft inquiry flow are unchanged.
 
@@ -50,9 +50,9 @@ Cloudflare can automatically deploy subsequent pushes to the connected branch. S
 ## 3. Attach the domain and enable HTTPS
 
 1. Ensure the domain's Cloudflare zone is **Active** in the same account as the Worker.
-2. Open **Workers & Pages → websirico → Settings → Domains & Routes → Add → Custom Domain**.
+2. Open **Workers & Pages → adelvio → Settings → Domains & Routes → Add → Custom Domain**.
 3. Add `adelvio.com`.
-4. Add `www.adelvio.com` to the same Worker so both addresses are attached.
+4. For the chosen www-to-root setup, add a proxied CNAME named `www`, targeting `adelvio.com`, in the domain's DNS records. Configure the redirect in step 4; a separate www Worker binding is not required for this redirect.
 5. Cloudflare creates the necessary DNS records and certificates. Wait for activation before announcing the new address.
 6. If an existing DNS record conflicts, inspect what it serves before replacing it. Do not change mail records to fix website routing.
 
@@ -85,4 +85,4 @@ Domain renewal is annual. Cloudflare static-asset requests and storage have no c
 
 ## Current boundary
 
-Configuration and local validation can be completed before registration. The owner reports completing the domain purchase. Account connection, live deployment, DNS activation, redirects and final live checks remain pending.
+The owner confirms the domain is purchased and the website is live. Updates are built from `main` through the Cloudflare GitHub integration. Check deployment results and the production URL after each release.

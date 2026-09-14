@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url';
 import pagesConfig from './vite.pages.config';
 
 export default defineConfig(() => {
-  const configuredUrl = process.env.SITE_URL || process.env.WEBSIRICO_SITE_URL;
+  const configuredUrl = process.env.SITE_URL;
   if (!configuredUrl) {
     throw new Error('Set SITE_URL to your confirmed public HTTPS address before building for Cloudflare.');
   }
