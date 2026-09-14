@@ -35,3 +35,7 @@ Production build and TypeScript check passed. Inspected desktop and mobile layou
 
 ## Brand and contact update
 Public business name: Adelvio. Owner: Jose Rodriguez, B.S. in Computer Engineering (PUPR). Uses the supplied profile photo, phone, email, Instagram and LinkedIn links. The form prepares a mailto draft for the visitor to review and send; it does not deliver mail through a backend. A local brief download remains available. The production domain is adelvio.com.
+
+
+## Supplied brand logo
+The header and footer use `public/adelvio-logo.png`, provided by the owner. The transparent image is preserved unchanged; a responsive CSS frame trims unused canvas space. The same asset path works for both Cloudflare and GitHub Pages builds.
