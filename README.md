@@ -1,6 +1,6 @@
 # Adelvio
 
-Website for the user's website-building services. Built September 14, 2026.
+Adelvio's independent digital studio website. Original build September 14, 2026; studio experience refinement September 15, 2026.
 
 ## Content decisions
 
@@ -26,7 +26,7 @@ This is a public informational website. It requires no ChatGPT account. The inqu
 
 Use npm install, npm run dev and npm run build. The project uses the generated Sites/Vinext structure and retains its lockfile. Hosting identity is in .openai/hosting.json. Never place source credentials or user secrets in this file or source control.
 
-The primary page is app/page.tsx; hero/base styles are app/globals.css; the remaining site styles are app/studio.css. Metadata is in app/layout.tsx. The generated social card is public/adelvio-og.png.
+The page composition and inquiry flow live in `app/page.tsx`. Agreed package, care, add-on and FAQ content lives in `app/offerings.ts`. `app/components/StudioExperience.tsx` contains the shared product window, hero, three-stage system story and interactive booking concept. `useScrollScene.ts` owns the measured scroll progress and listener cleanup. Base and retained section styles are in `globals.css`, `studio.css` and `brand.css`; `experience.css` defines the refined studio presentation and its responsive variants. Metadata is kept consistent in `app/layout.tsx` and `pages/index.html`. The current social card is `public/og.png`.
 
 ## Validation
 
@@ -38,4 +38,8 @@ Public business name: Adelvio. Owner: Jose Rodriguez, B.S. in Computer Engineeri
 
 
 ## Supplied brand logo
-The header and footer use `public/adelvio-logo.png`, provided by the owner. The transparent image is preserved unchanged; a responsive CSS frame trims unused canvas space. The same asset path works for both Cloudflare and GitHub Pages builds.
+The original `public/adelvio-logo.png` and standalone PNG symbol remain unchanged. The page uses losslessly encoded WebP versions to reduce downloads. A responsive CSS frame trims unused wordmark canvas space. Both deployment builds use the same assets through their configured base paths. See [brand assets](docs/brand-assets.md).
+
+## Studio experience review
+
+See [the refinement notes](docs/studio-refinement.md) for the visual concept, motion behavior, responsive checks and production audit results. The Node browser smoke check is `scripts/check-studio.mjs`; it connects to an isolated Chrome debugging session at port 9333 and tests the production preview on port 4181 by default. Set `STUDIO_TEST_URL` to test a different preview. It uses Node's built-in APIs and adds no application dependency. Screenshots and its report are saved under the ignored `work/studio-review/` folder.

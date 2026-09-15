@@ -1,18 +1,238 @@
-.site-header nav{gap:25px}.founder-section{display:grid;grid-template-columns:.85fr 1fr;gap:100px;align-items:center;border-top:1px solid var(--line)}.founder-portrait{margin:0;max-width:420px}.founder-portrait img{width:100%;height:auto;aspect-ratio:1/1.12;object-fit:cover;object-position:center;border-radius:3px;display:block}.founder-portrait figcaption{font:9px monospace;letter-spacing:1px;display:flex;justify-content:space-between;align-items:center;padding-top:19px;color:var(--muted)}.founder-portrait figcaption span{font-size:24px;color:var(--blue)}.founder-copy{min-width:0}.founder-copy h2{font-size:clamp(40px,4.1vw,59px);font-weight:400;line-height:1.06;letter-spacing:-2.5px;margin:0 0 27px}.founder-intro{font-size:15px;line-height:1.8;color:var(--muted);max-width:470px}.founder-degree{font-size:12px;line-height:1.7;margin:23px 0 28px;padding-left:14px;border-left:2px solid var(--blue)}.founder-degree span{display:block;color:var(--muted);font:10px monospace;letter-spacing:1px;margin-top:5px}.founder-email,.founder-phone{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:48px;border-top:1px solid var(--line);font-size:15px;overflow-wrap:anywhere}.founder-email span,.founder-phone span{color:var(--blue);flex-shrink:0}.founder-email:hover,.founder-phone:hover,.social-links a:hover{color:var(--blue)}.social-links{display:flex;gap:28px;margin-top:15px}.social-links a{font-size:12px;min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:5px}.contact-shortcuts{display:flex;flex-direction:column;align-items:start;margin-top:22px;gap:4px}.contact-shortcuts a{font-size:13px;min-height:44px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:5px}.contact-shortcuts a:focus-visible{outline-color:white}.contact-shortcuts a:hover{color:#e1e7ff}.brief-download{display:block;min-height:48px;background:transparent;border:0;color:white;text-decoration:underline;text-underline-offset:5px;font-size:12px;margin:7px auto 0;cursor:pointer}.brief-download:hover{color:#e1e7ff}.download-note{max-width:100%;min-height:38px}.project-symbol{font-size:85px;margin-top:22px}@media(max-width:1100px){.site-header nav{gap:18px}.founder-section{gap:55px}.founder-email{font-size:13px}}@media(max-width:760px){.founder-section{grid-template-columns:1fr;gap:35px}.founder-portrait{max-width:400px;width:100%}.founder-portrait img{aspect-ratio:1.1/1;object-position:center 40%}.founder-copy h2{font-size:43px;letter-spacing:-1.8px}.founder-copy .eyebrow{margin-bottom:23px}.founder-intro{font-size:14px}.founder-email{font-size:clamp(11px,3.3vw,15px)}.founder-degree{margin-block:22px}.contact-shortcuts{margin-top:17px}.project-layout{gap:28px}.brief-download{font-size:13px}}
+
+.site-header nav {
+  gap: 25px
+}
+.founder-section {
+  display: grid;
+  grid-template-columns: .85fr 1fr;
+  gap: 100px;
+  align-items: center;
+  border-top: 1px solid var(--line)
+}
+.founder-portrait {
+  margin: 0;
+  max-width: 420px
+}
+.founder-portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1.12;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  display: block
+}
+.founder-portrait figcaption {
+  font: 9px monospace;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 19px;
+  color: var(--muted)
+}
+.founder-portrait figcaption span {
+  font-size: 24px;
+  color: var(--blue)
+}
+.founder-copy {
+  min-width: 0
+}
+.founder-copy h2 {
+  font-size: clamp(40px,4.1vw,59px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -2.5px;
+  margin: 0 0 27px
+}
+.founder-intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 470px
+}
+.founder-degree {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 23px 0 28px;
+  padding-left: 14px;
+  border-left: 2px solid var(--blue)
+}
+.founder-degree span {
+  display: block;
+  color: var(--muted);
+  font: 10px monospace;
+  letter-spacing: 1px;
+  margin-top: 5px
+}
+.founder-email,.founder-phone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  overflow-wrap: anywhere
+}
+.founder-email span,.founder-phone span {
+  color: var(--blue);
+  flex-shrink: 0
+}
+.founder-email:hover,.founder-phone:hover,.social-links a:hover {
+  color: var(--blue)
+}
+.social-links {
+  display: flex;
+  gap: 28px;
+  margin-top: 15px
+}
+.social-links a {
+  font-size: 12px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 5px
+}
+.contact-shortcuts {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 22px;
+  gap: 4px
+}
+.contact-shortcuts a {
+  font-size: 13px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 5px
+}
+.contact-shortcuts a:focus-visible {
+  outline-color: white
+}
+.contact-shortcuts a:hover {
+  color: #e1e7ff
+}
+.brief-download {
+  display: block;
+  min-height: 48px;
+  background: transparent;
+  border: 0;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-size: 12px;
+  margin: 7px auto 0;
+  cursor: pointer
+}
+.brief-download:hover {
+  color: #e1e7ff
+}
+.download-note {
+  max-width: 100%;
+  min-height: 38px
+}
+.project-symbol {
+  font-size: 85px;
+  margin-top: 22px
+}@media(max-width:1100px){
+.site-header nav {
+  gap: 18px
+}
+.founder-section {
+  gap: 55px
+}
+.founder-email {
+  font-size: 13px
+}}@media(max-width:760px){
+.founder-section {
+  grid-template-columns: 1fr;
+  gap: 35px
+}
+.founder-portrait {
+  max-width: 400px;
+  width: 100%
+}
+.founder-portrait img {
+  aspect-ratio: 1.1/1;
+  object-position: center 40%
+}
+.founder-copy h2 {
+  font-size: 43px;
+  letter-spacing: -1.8px
+}
+.founder-copy .eyebrow {
+  margin-bottom: 23px
+}
+.founder-intro {
+  font-size: 14px
+}
+.founder-email {
+  font-size: clamp(11px,3.3vw,15px)
+}
+.founder-degree {
+  margin-block: 22px
+}
+.contact-shortcuts {
+  margin-top: 17px
+}
+.project-layout {
+  gap: 28px
+}
+.brief-download {
+  font-size: 13px
+}}
 
 /* Display the supplied transparent logo; frame trims its empty canvas without altering the artwork. */
-.wordmark{display:inline-flex;flex-shrink:0;min-height:48px}
-.brand-logo-frame{position:relative;display:block;width:210px;aspect-ratio:1875/487;overflow:hidden}
-.brand-logo{position:absolute;display:block;width:109.226667%;max-width:none;height:auto;left:-7.2%;top:-29.774128%}
-.site-footer .brand-logo-frame{width:190px}
-@media(max-width:1100px){.site-header .brand-logo-frame{width:185px}}
-@media(max-width:760px){.site-header .brand-logo-frame{width:168px}.site-footer .brand-logo-frame{width:160px}}
+.wordmark {
+  display: inline-flex;
+  flex-shrink: 0;
+  min-height: 48px
+}
+.brand-logo-frame {
+  position: relative;
+  display: block;
+  width: 210px;
+  aspect-ratio: 1875/487;
+  overflow: hidden
+}
+.brand-logo {
+  position: absolute;
+  display: block;
+  width: 109.226667%;
+  max-width: none;
+  height: auto;
+  left: -7.2%;
+  top: -29.774128%
+}
+.site-footer .brand-logo-frame {
+  width: 190px
+}
+@media(max-width:1100px){
+.site-header .brand-logo-frame {
+  width: 185px
+}}
+@media(max-width:760px){
+.site-header .brand-logo-frame {
+  width: 168px
+}
+.site-footer .brand-logo-frame {
+  width: 160px
+}}
 
 /* Shared standalone logo symbol replaces the former decorative star. */
-.brand-symbol{display:block;width:1em;height:1em;object-fit:contain;flex-shrink:0}
-.phone-graphic .brand-symbol{width:58px;height:58px}
-.art-tag>span{display:block;flex-shrink:0}
-.service-ribbon i{display:block;flex-shrink:0}
-.book-nav .brand-symbol{width:20px;height:20px}
-.project-symbol .brand-symbol{width:85px;height:85px;filter:brightness(0) invert(1)}
-@media(max-width:1100px) and (min-width:761px){.phone-graphic .brand-symbol{width:45px;height:45px}}
+.brand-symbol {
+  display: block;
+  width: 1em;
+  height: 1em;
+  object-fit: contain;
+  flex-shrink: 0
+}
+.project-symbol .brand-symbol {
+  width: 85px;
+  height: 85px;
+  filter: brightness(0) invert(1)
+}

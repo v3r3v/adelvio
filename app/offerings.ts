@@ -1,0 +1,19 @@
+// Agreed offerings: prices and scope are shared by the display and inquiry brief.
+export const packages = [
+{name:"Launch",price:750,description:"A focused first home for your business.",tag:"ONE PAGE / A CLEAR START",features:["1 page · up to 6 sections","Up to 15 supplied images","Services, hours & location","Call, WhatsApp or existing booking link","Basic page title & description","1 consolidated revision round"]},
+{name:"Business",price:1250,description:"More room for your services and your story.",tag:"UP TO FIVE PAGES / MORE DEPTH",features:["Up to 5 pages & 30 supplied images","Service pages & gallery","Light editing of supplied copy","One simple contact form","Basic search indexing setup","2 consolidated revision rounds"]},
+{name:"Appointments",price:1900,description:"A website connected to the way you book.",tag:"WEBSITE + BOOKING SETUP",features:["Everything in Business","One supported booking provider","Up to 10 services · 1 location","Up to 3 staff, subject to provider plan","Availability setup & test booking","60-minute owner training"]}
+];
+export const carePlans=[{name:"No monthly care",price:0},{name:"Technical Care",price:49},{name:"Care Plus",price:99},{name:"Local Growth",price:199}];
+export const extras=[["Additional standard page","$150–$250"],["Spanish / English version","$250–$500"],["Business email setup","$100–$150"],["Google Business Profile assistance","$150–$250"],["Booking setup on an existing site","$200–$400"],["Seasonal landing page","$200–$350"],["Website refresh","From $300"]];
+export const questions=[
+["What is included in every website?","Domain and hosting connection, HTTPS verification, mobile and keyboard checks, link testing, source handoff, and a 30-day correction period for defects in the agreed delivered scope. New features and third-party outages are outside that correction period."],
+["Who owns the website and domain?","You own your domain and service accounts. After full payment, you receive the agreed website source, assets and handoff instructions. Your proposal explains rights to reusable components and third-party assets."],
+["Are hosting, email and booking fees included?","Provider subscriptions are separate and paid directly by you. Basic static hosting can start at no cost within provider limits. Domain registration, email, paid booking plans and transaction fees are confirmed before you commit."],
+["Do I have to subscribe to monthly care?","No. Monthly care is optional and begins at launch. If you end care, your paid-for website remains in your accounts while your provider services stay active. You arrange future updates and support separately."],
+["What counts as a content update?","Changes to existing text, hours, prices or supplied images. New pages, redesigns, translations and integrations are quoted separately. Unused monthly time does not roll over. Additional approved work is $60/hour, with a 30-minute minimum."],
+["How do payment and revisions work?","50% is due to begin, and 50% after preview approval before launch. Launch includes one consolidated revision round; Business and Appointments include two. The final proposal confirms scope, content requirements, timing and cancellation terms."],
+["Can I add another language or an online store?","A Spanish/English version is an add-on, quoted to the page and word count. Online stores, custom applications and complex integrations need a separate scope. The website packages cover one language unless your proposal says otherwise."],
+["When is support available?","Monday–Friday, 9 a.m.–5 p.m. Puerto Rico time. Routine requests are acknowledged within two business days; reported site-down issues within one business day. These are acknowledgement targets, not guaranteed resolution times or 24/7 coverage."]
+];
+export const money=(n:number)=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
