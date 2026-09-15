@@ -68,6 +68,7 @@ try {
   }
   await evaluate('document.fonts.ready');
   assert.match(await evaluate('document.title'), /Adelvio.*digital studio/);
+  assert.equal(await evaluate('document.querySelector(".project-heading h2").textContent'), 'Let’s makewhat’s next.');
   assert.equal(await evaluate('document.querySelectorAll("h1").length'), 1);
   const brokenAnchors = await evaluate(`Array.from(document.querySelectorAll('a[href^="#"]')).filter(a=>a.hash&&a.hash!=='#'&&!document.getElementById(a.hash.slice(1))).map(a=>a.hash)`);
   assert.deepEqual(brokenAnchors, [], 'Every internal link must resolve');
