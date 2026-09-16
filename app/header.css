@@ -1,4 +1,9 @@
 /* The header keeps its layout footprint while the surface becomes a floating bar. */
+.site-footer .portal-entry { font-size: 11px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+@media (max-width: 760px) {
+  .site-footer .portal-entry { grid-column: 1 / -1; grid-row: 3; border-top: 1px solid var(--line); padding-top: 15px; }
+  .site-footer > a:last-child { grid-column: 2; grid-row: 1; }
+}
 .site-header {
   display: block;
   background: transparent;

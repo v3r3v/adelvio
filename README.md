@@ -43,3 +43,6 @@ The original `public/adelvio-logo.png` and standalone PNG symbol remain unchange
 ## Studio experience review
 
 See [the refinement notes](docs/studio-refinement.md) for the visual concept, motion behavior, responsive checks and production audit results. The Node browser smoke check is `scripts/check-studio.mjs`; it connects to an isolated Chrome debugging session at port 9333 and tests the production preview on port 4181 by default. Set `STUDIO_TEST_URL` to test a different preview. It uses Node's built-in APIs and adds no application dependency. Screenshots and its report are saved under the ignored `work/studio-review/` folder.
+# Client portal demo
+
+The portal is available under `/portal/login` on the Cloudflare deployment. It uses synthetic client data and per-visitor demo sessions; it is not a real customer authentication system. See [the portal setup, demo boundaries, integration roadmap and deployment guide](docs/client-portal-demo.md).

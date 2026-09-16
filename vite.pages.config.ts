@@ -11,6 +11,7 @@ export default defineConfig({
   plugins: [react(), prerenderHome()],
   css: {postcss: {plugins: [tailwindcss()]}},
   build: {
+    rollupOptions: {input: {home: fileURLToPath(new URL('./pages/index.html', import.meta.url)), portal: fileURLToPath(new URL('./pages/portal/index.html', import.meta.url))}},
     outDir: fileURLToPath(new URL('./dist-pages/', import.meta.url)),
     emptyOutDir: true,
   },

@@ -732,6 +732,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
         <span>
           {t("Independent digital studio · Puerto Rico · By Jose Rodriguez")}
         </span>
+        <a className="portal-entry" href={assetBase === "/" ? "/portal/login" : "https://adelvio.com/portal/login"}>{t("Client portal demo")} <Icon /></a>
         <a href="#main">
           {t("Back to top")} <Icon name="arrow-up" />
         </a>

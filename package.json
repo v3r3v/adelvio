@@ -16,6 +16,9 @@
     "deploy:cloudflare": "wrangler deploy --config wrangler.cloudflare.jsonc",
     "check:icons": "node scripts/check-icons.mjs",
     "check:language": "node scripts/check-language.mjs",
+    "test:portal": "node scripts/test-portal.mjs",
+    "predeploy:cloudflare": "npm run test:portal && npm run check:language",
+    "dev:portal": "wrangler dev --config wrangler.cloudflare.jsonc --port 8787",
     "prebuild": "npm run check:icons",
     "prebuild:pages": "npm run check:icons",
     "prebuild:cloudflare": "npm run check:icons"

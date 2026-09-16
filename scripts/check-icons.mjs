@@ -11,7 +11,7 @@ function scan(directory) {
     return readFileSync(path, 'utf8').split('\n').flatMap((line, index) => forbidden.test(line) ? [`${path}:${index + 1}`] : []);
   });
 }
-const failures = scan('app');
+const failures = [...scan('app'), ...scan('portal')];
 if (failures.length) {
   throw new Error(`Use SVG icons instead of Unicode UI symbols:\n${failures.join('\n')}`);
 }

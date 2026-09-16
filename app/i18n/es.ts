@@ -1,4 +1,5 @@
 export const spanish: Record<string, string> = {
+  "Client portal demo": "Portal de clientes · demo",
   "Skip to content": "Saltar al contenido",
   "Adelvio, home": "Adelvio, inicio",
   "Main navigation": "Navegación principal",

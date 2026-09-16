@@ -1,0 +1,1 @@
+{"id":"./","name":"Adelvio · Portal demo","short_name":"Adelvio","description":"Una vista clara de tu mundo digital. Demostración con datos de ejemplo.","lang":"es","start_url":"./login","scope":"./","display":"standalone","background_color":"#f5f3ec","theme_color":"#f5f3ec","icons":[{"src":"../adelvio-symbol.png","sizes":"512x512","type":"image/png","purpose":"any"}]}
