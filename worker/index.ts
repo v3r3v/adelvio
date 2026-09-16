@@ -72,7 +72,18 @@ export class PortalSession {
     await this.ctx?.storage.deleteAll();
   }
   async fetch(request: Request) {
+    // Keep validation, mutation and persistence atomic within a demo session.
+    return this.ctx
+      ? this.ctx.blockConcurrencyWhile(() => this.run(request))
+      : this.run(request);
+  }
+  private async run(request: Request) {
+    const previous = request.method === "POST" ? structuredClone(this.store) : undefined;
     const response = await this.handle(request);
+    if (request.method === "POST" && response.ok && this.store && new TextEncoder().encode(JSON.stringify(this.store)).byteLength > 100000) {
+      this.store = previous;
+      return json({error: "Esta sesión demo está llena. Sal y entra de nuevo para empezar otra prueba."}, 413);
+    }
     if (request.method === "POST" && response.ok && this.ctx) {
       if (this.store) {
         await this.ctx.storage.put("demo", this.store);

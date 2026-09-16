@@ -42,6 +42,8 @@ POST requests require same-origin Origin and JSON content type. Streamed request
 
 Attachment selection accepts at most three PNG/JPEG/WebP/PDF files, each up to 5 MB. **Only name/type/size metadata is transmitted; file contents are never uploaded or downloadable.** The UI says this explicitly. Actual uploads require a private object store, signed access, MIME signature verification and malware scanning.
 
+The complete demo session is also capped at 100 KB; an over-budget mutation is rejected without changing the stored state. Session mutations are serialized with persistence to avoid competing updates.
+
 No email is sent. The sidebar's contact link explicitly opens Jose's real email address in the user's own mail app. Approval buttons only simulate approval; no payments, contracts or real work are triggered. AI is disabled.
 
 ## Local setup and verification

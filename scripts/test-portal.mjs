@@ -305,7 +305,7 @@ try {
   let hydration;
   let alarmAt;
   const context = {
-    blockConcurrencyWhile: (callback) => { hydration = callback(); },
+    blockConcurrencyWhile: (callback) => { hydration = callback(); return hydration; },
     storage: {
       get: async () => structuredClone(persisted),
       put: async (_key, value) => { persisted = structuredClone(value); },
@@ -321,6 +321,13 @@ try {
   await hydration;
   assert.equal((await resumed.fetch(new Request('https://session/snapshot'))).status, 200);
   checks++;
+  let capped = false;
+  for (let i=0;i<60;i++) {
+    const before = persisted.tickets[0].messages.length;
+    const result = await resumed.fetch(new Request('https://session/tickets/REQ-1042', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'message',text:'x'.repeat(2900)})}));
+    if(result.status===413) {capped=true;assert.equal(persisted.tickets[0].messages.length,before);break;}
+  }
+  check('Oversized demo state is rejected without persisting the mutation',()=>assert.ok(capped));
   await resumed.alarm();
   check('Expiry alarm clears stored demo data', () => assert.equal(persisted, undefined));
   assert.equal((await resumed.fetch(new Request('https://session/snapshot'))).status, 401);
