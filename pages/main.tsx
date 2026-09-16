@@ -5,6 +5,7 @@ import '../app/globals.css';
 import '../app/studio.css';
 import '../app/brand.css';
 import '../app/experience.css';
+import '../app/header.css';
 
 const root = document.getElementById('root')!;
 const page = <Home assetBase={import.meta.env.BASE_URL}/>;

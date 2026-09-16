@@ -15,6 +15,7 @@
     "build:cloudflare": "vite build --config vite.cloudflare.config.ts",
     "deploy:cloudflare": "wrangler deploy --config wrangler.cloudflare.jsonc",
     "check:icons": "node scripts/check-icons.mjs",
+    "check:language": "node scripts/check-language.mjs",
     "prebuild": "npm run check:icons",
     "prebuild:pages": "npm run check:icons",
     "prebuild:cloudflare": "npm run check:icons"
