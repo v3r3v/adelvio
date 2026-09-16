@@ -13,7 +13,11 @@
     "build:pages": "vite build --config vite.pages.config.ts",
     "preview:pages": "vite preview --config vite.pages.config.ts",
     "build:cloudflare": "vite build --config vite.cloudflare.config.ts",
-    "deploy:cloudflare": "wrangler deploy --config wrangler.cloudflare.jsonc"
+    "deploy:cloudflare": "wrangler deploy --config wrangler.cloudflare.jsonc",
+    "check:icons": "node scripts/check-icons.mjs",
+    "prebuild": "npm run check:icons",
+    "prebuild:pages": "npm run check:icons",
+    "prebuild:cloudflare": "npm run check:icons"
   },
   "dependencies": {
     "next": "16.2.6",
