@@ -16,3 +16,5 @@ For plain HTML demos, use inline SVGs or an in-document SVG symbol sprite, as de
 Decorative SVGs are hidden from assistive technology and do not receive focus. An icon-only control must have an accessible name on the button/link. Keep text labels and keyboard focus styles.
 
 Use this rule for future Adelvio sites and client demos. When introducing a new icon, define its geometry once, reuse it, and review it at desktop and phone widths. Do not substitute an emoji on small screens. The build runs `scripts/check-icons.mjs` to catch reintroduced Unicode UI symbols.
+
+The `menu` icon uses two horizontal strokes (`M4 8h16M4 16h16`) in the shared 24-unit viewBox. It appears inside the decorative mobile concept preview; real navigation controls retain accessible text labels.

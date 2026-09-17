@@ -117,18 +117,21 @@ export function StudioHero({ assetBase }: { assetBase: string }) {
             {t("Real")} <em>{t("possibility.")}</em>
           </h1>
           <div className="hero-intro">
-            <p>{t("Digital experiences that move your business forward.")}</p>
+            <p>{t("Website design and development for service businesses in Puerto Rico.")}</p>
             <p>
               {t(
-                "Thoughtful websites. Connected systems. A clear path from your next idea to something real.",
+                "Help people understand your services, get in touch, and take the next step. Designed and built with Jose, from the first conversation to the handoff.",
               )}
             </p>
+            <div className="hero-actions">
+            <a className="button blue" href="#project">{t("Tell me about your business")} <Icon /></a>
             <a className="text-link" href="#work">
               {t("Explore the work")}{" "}
               <span aria-hidden="true">
                 <Icon name="arrow-up-right" />
               </span>
             </a>
+            </div>
           </div>
         </div>
         <div className="hero-stage" aria-hidden="true">
@@ -197,6 +200,11 @@ export function StudioHero({ assetBase }: { assetBase: string }) {
           </a>
           <span>{t("DESIGNED HERE. READY FOR WHAT’S NEXT.")}</span>
         </div>
+      </div>
+      <div className="studio-promise wrap">
+        <a className="studio-person" href="#about"><img src={assetBase + "profile_image.jpg"} width={52} height={52} alt="" loading="lazy" /><span><b>Jose Rodriguez</b><small>{t("Your direct design & development contact")}</small></span><Icon /></a>
+        <p>{t("A small studio. A direct conversation.")}</p>
+        <a className="text-link" href="#packages">{t("Clear scope. Published prices.")} <Icon name="arrow-down" /></a>
       </div>
     </section>
   );

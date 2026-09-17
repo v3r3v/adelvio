@@ -19,6 +19,11 @@ export function SiteHeader({ assetBase }: { assetBase: string }) {
   useEffect(() => {
     const header = ref.current;
     if (!header) return;
+    // Cosmetic progressive enhancement, never a capability/interaction restriction.
+    // Apple's native SwiftUI material is not a browser component.
+    const apple = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    const blur = CSS.supports("backdrop-filter", "blur(1px)") || CSS.supports("-webkit-backdrop-filter", "blur(1px)");
+    header.dataset.material = apple && blur ? "glass" : "solid";
     let frame = 0;
     let maximum = 1;
     let compact = false;
@@ -54,6 +59,7 @@ export function SiteHeader({ assetBase }: { assetBase: string }) {
       resize.disconnect();
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", measure);
+      delete header.dataset.material;
     };
   }, []);
   useEffect(() => {

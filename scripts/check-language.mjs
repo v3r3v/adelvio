@@ -29,11 +29,20 @@ try {
   carePlans.forEach(({ name }) => requireTranslation(name));
   extras.forEach(([name, price]) => { requireTranslation(name); if (!price.startsWith('$')) requireTranslation(price); });
   questions.flat().forEach(requireTranslation);
+  // Include both branches when a component chooses its copy conditionally.
+  function checkTranslationArgument(node) {
+    if (!node) return;
+    if (ts.isStringLiteral(node)) requireTranslation(node.text);
+    if (ts.isConditionalExpression(node)) {
+      checkTranslationArgument(node.whenTrue);
+      checkTranslationArgument(node.whenFalse);
+    }
+  }
   // Every literal translation call must be backed by the dictionary.
-  for (const file of ['app/page.tsx', 'app/components/SiteHeader.tsx', 'app/components/StudioExperience.tsx']) {
+  for (const file of ['app/page.tsx', 'app/components/SiteHeader.tsx', 'app/components/StudioExperience.tsx', 'app/components/StudioRefinements.tsx']) {
     const ast = ts.createSourceFile(file, readFileSync(file, 'utf8'), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
     function visit(node) {
-      if (ts.isCallExpression(node) && node.expression.getText(ast) === 't' && ts.isStringLiteral(node.arguments[0])) requireTranslation(node.arguments[0].text);
+      if (ts.isCallExpression(node) && node.expression.getText(ast) === 't') checkTranslationArgument(node.arguments[0]);
       ts.forEachChild(node, visit);
     }
     visit(ast);

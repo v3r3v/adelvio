@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- Shared static builds serve local assets without a Next image server. */
 import { LanguageProvider, useLanguage } from "./i18n/LanguageProvider";
 import { SiteHeader } from "./components/SiteHeader";
+import { ConceptNotes, CostGuide, PaymentBreakdown } from "./components/StudioRefinements";
 import { Icon } from "./components/Icon";
 import { useEffect, useState } from "react";
 import {
@@ -144,16 +145,15 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                 <em>{t("the difference.")}</em>
               </h2>
               <p>
-                {t("Not just something to look at.")}
-                <br />
-                {t("Something to experience.")}
+                {t("Two original studies. Different business needs. A closer look at how design makes the next step clearer.")}
               </p>
             </div>
             <article className="work-case">
+              <div className="work-case-main">
               <div className="work-case-copy reveal">
                 <span className="work-index">{t("01 / DESIGN STUDY")}</span>
                 <h3>
-                  {t("A presence.")}
+                  {t("A presence.")}{" "}
                   <br />
                   {t("With personality.")}
                 </h3>
@@ -163,6 +163,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                   )}
                 </p>
                 <dl>
+                  <div><dt>{t("BUSINESS TYPE")}</dt><dd>{t("Independent service business")}</dd></div>
                   <div>
                     <dt>{t("FOCUS")}</dt>
                     <dd>{t("Visual identity / Web experience")}</dd>
@@ -222,13 +223,22 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                     <span>{t("From first look to next step.")}</span>
                   </div>
                 </div>
+                <div className="folio-mobile-preview" aria-hidden="true">
+                  <span className="folio-mobile-rail"><b>THE DETAIL.</b><Icon name="menu" /></span>
+                  <span className="mini-kicker">{t("Good care starts here")}</span>
+                  <p>{t("Made to")}<br /><em>{t("stand out.")}</em></p>
+                  <div className="folio-mobile-shape" />
+                  <span className="folio-mobile-contact">{t("Let’s talk")} <Icon /></span>
+                </div>
                 <figcaption>
                   <span>{t("THE DETAIL / EDITORIAL WEBSITE CONCEPT")}</span>
                   <span>
-                    {t("DESKTOP EXPLORATION")} <Icon name="arrow-up-right" />
+                    {t("DESKTOP & MOBILE STUDY")} <Icon name="arrow-up-right" />
                   </span>
                 </figcaption>
               </figure>
+              </div>
+              <ConceptNotes />
             </article>
             <div className="work-booking reveal">
               <BookingDemo assetBase={assetBase} />
@@ -245,6 +255,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                   {t("Tap a day and time to explore the details.")}
                 </p>
               </div>
+              <ConceptNotes booking />
             </div>
             <p className="showcase-disclaimer">
               {t(
@@ -269,6 +280,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
               )}
             </p>
           </div>
+          <CostGuide />
           <div className="package-grid">
             {packages.map((pack, index) => (
               <article
@@ -303,7 +315,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                   className={"button " + (index === 1 ? "blue" : "outline")}
                   onClick={() => selectPackage(index)}
                 >
-                  <span>{t("Choose")} {t(pack.name)}</span>
+                  <span>{t("Choose")}{" "}{t(pack.name)}</span>
                   <span aria-hidden="true">
                     <Icon name="arrow-up-right" />
                   </span>
@@ -324,6 +336,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
               )}
             </p>
           </div>
+          <p className="booking-scope-note"><Icon name="window-dots" /><span>{t("Appointments connects an existing booking provider. Provider fees are separate; a custom booking platform is a separate project.")}</span></p>
         </section>
         <section className="process-section" id="process">
           <div className="wrap">
@@ -541,6 +554,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
             <p className="founder-degree">
               {t("B.S. in Computer Engineering")} <span>PUPR</span>
             </p>
+            <div className="founder-working-note"><span className="eyebrow">{t("DIRECT BY DESIGN")}</span><p>{t("You speak with the person designing and building your website. We agree on the scope, review the preview together, and make the handoff clear.")}</p></div>
             <a
               className="founder-email"
               href="mailto:jose.rodriguez.velez@gmail.com"
@@ -609,6 +623,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
             </div>
             <form className="project-form" onSubmit={prepareBrief}>
               <p className="form-title">{t("Plan a website project")}</p>
+              <p className="brief-introduction">{t("A starting point for our conversation. Prepare an email draft or save your brief; nothing is sent automatically.")}</p>
               <label htmlFor="business">
                 {t("Your business name")}
                 <input
@@ -672,6 +687,7 @@ function HomeContent({ assetBase }: { assetBase: string }) {
                   )}
                 />
               </label>
+              <PaymentBreakdown chosen={chosen} care={care} />
               <div className="brief-total" aria-live="polite">
                 <span>{t("YOUR STARTING POINT")}</span>
                 <div>
