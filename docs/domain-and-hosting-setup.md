@@ -2,6 +2,8 @@
 
 Prepared September 14, 2026. The owner has purchased `adelvio.com`, renamed the GitHub repository to `v3r3v/adelvio`, and confirmed the Cloudflare website is live. The initial setup instructions below are retained for reference. Production uses the `adelvio` Worker and `SITE_URL=https://adelvio.com`.
 
+**Release-policy update:** Automatic publishing is disabled. Follow [Preview and production releases](release-controls.md) for the current controls. The original automatic-deployment instructions below are historical, not the current release procedure. GitHub Pages remains available as a separately approved phone preview.
+
 The setup uses Cloudflare Registrar for the domain, Cloudflare DNS to connect it, Cloudflare Workers Static Assets for hosting, and GitHub for the source code. The existing design, packages and email-draft inquiry flow are unchanged.
 
 ## 1. Find and purchase the domain
@@ -85,4 +87,4 @@ Domain renewal is annual. Cloudflare static-asset requests and storage have no c
 
 ## Current boundary
 
-The owner confirms the domain is purchased and the website is live. Updates are built from `main` through the Cloudflare GitHub integration. Check deployment results and the production URL after each release.
+The website remains live on its existing version. Cloudflare may build `main`, but its deployment command only prints a disabled notice. Publishing requires the explicit local production command documented in [release controls](release-controls.md). GitHub Pages has its own opt-in preview workflow.

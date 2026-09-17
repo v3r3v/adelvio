@@ -1,25 +1,24 @@
-name: Publish Adelvio
+name: Adelvio preview checks and publishing
 
 on:
   push:
+    branches: [main, 'preview/**']
+  pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      publish_preview:
+        description: 'Publish this branch to v3r3v.github.io/adelvio only (never adelvio.com)'
+        type: boolean
+        required: true
+        default: false
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: github-pages
-  cancel-in-progress: true
 
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -27,13 +26,30 @@ jobs:
           node-version: '22.14.0'
           cache: npm
       - run: npm ci
+      - run: npm run test:deployment
       - run: npm run test:portal
       - run: npm run check:language
       - run: npm run build:pages
-      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && inputs.publish_preview
         with:
           path: dist-pages
+
+  publish-preview:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_preview
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
       - name: Publish to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
